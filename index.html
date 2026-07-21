@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>My Music Portfolio</title>
+<title>Green Music Portfolio</title>
 
 <style>
 
@@ -12,7 +12,7 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family: 'Arial', sans-serif;
+    font-family:Arial,sans-serif;
 }
 
 html{
@@ -20,7 +20,7 @@ html{
 }
 
 body{
-    background:#0b0b0b;
+    background:#061b0d;
     color:white;
 }
 
@@ -29,7 +29,7 @@ nav{
     position:fixed;
     top:0;
     width:100%;
-    background:#000;
+    background:#043d1b;
     padding:15px;
     text-align:center;
     z-index:10;
@@ -38,107 +38,176 @@ nav{
 nav a{
     color:white;
     text-decoration:none;
-    margin:10px;
+    margin:8px;
     padding:10px 20px;
-    border-radius:20px;
-    background:#333;
+    border-radius:25px;
+    background:#0b6b32;
     transition:.3s;
 }
 
 nav a:hover{
-    background:#00c6ff;
+    background:#00ff66;
+    color:#003d16;
 }
 
+
 /* หน้าแรก */
+
 header{
     height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
     text-align:center;
+
     background:
-    linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.8)),
+    linear-gradient(
+    rgba(0,60,25,.7),
+    rgba(0,0,0,.8)),
     url("images/bg.jpg");
+
     background-size:cover;
 }
 
+
 .profile{
+
     width:200px;
     height:200px;
     border-radius:50%;
-    border:5px solid white;
+    border:5px solid #00ff66;
     object-fit:cover;
+
 }
+
 
 h1{
+
     font-size:45px;
     margin:20px;
+
+    color:#00ff66;
+
 }
 
+
 .btn{
+
     display:inline-block;
     margin-top:20px;
-    padding:15px 35px;
-    background:#00c6ff;
-    color:black;
+    padding:15px 40px;
+
+    background:#00ff66;
+    color:#003d16;
+
     border-radius:30px;
     text-decoration:none;
     font-weight:bold;
+
+    transition:.3s;
+
 }
+
 
 .btn:hover{
+
     background:white;
+
 }
 
-/* ส่วนต่างๆ */
+
+
+/* เนื้อหา */
 
 section{
+
     padding:80px 10%;
+
 }
 
+
 h2{
+
     text-align:center;
-    color:#00c6ff;
-    margin-bottom:30px;
+    color:#00ff66;
+    margin-bottom:35px;
+
 }
+
+
+.box{
+
+    background:#0d2b17;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    border:1px solid #00ff66;
+
+}
+
 
 
 /* รูปผลงาน */
 
 .gallery{
+
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
     gap:20px;
+
 }
+
+
 
 .gallery img{
+
     width:100%;
+
     height:250px;
+
     object-fit:cover;
+
     border-radius:15px;
+
+    border:3px solid #0b6b32;
+
     transition:.3s;
+
 }
+
+
 
 .gallery img:hover{
+
     transform:scale(1.05);
+
+    border-color:#00ff66;
+
 }
 
 
-/* กล่องข้อความ */
 
-.box{
-    background:#1b1b1b;
-    padding:30px;
-    border-radius:20px;
-    text-align:center;
-}
-
+/* Footer */
 
 footer{
-    background:#000;
+
+    background:#021006;
+
     padding:20px;
+
     text-align:center;
+
+    color:#aaa;
+
 }
+
 
 </style>
 
@@ -168,13 +237,21 @@ footer{
 
 <img class="profile" src="images/profile.jpg">
 
-<h1>Ronnaphop Portfolio</h1>
 
-<p>Music | Saxophone | Creative</p>
+<h1>
+Ronnaphop Portfolio
+</h1>
+
+
+<p>
+Music Portfolio | Saxophone | Artist
+</p>
+
 
 <a class="btn" href="#work">
 ดูผลงาน
 </a>
+
 
 </div>
 
@@ -182,40 +259,61 @@ footer{
 
 
 
+
 <section id="about">
 
 <h2>เกี่ยวกับฉัน</h2>
 
+
 <div class="box">
 
 <p>
-สวัสดีครับ ผมชื่อ ..............<br>
-นักเรียนผู้สนใจด้านดนตรีและการสร้างสรรค์ผลงาน
+ชื่อ : ใส่ชื่อของคุณ<br><br>
+
+ความสามารถ : ดนตรี การแสดง การสร้างสรรค์ผลงาน
+
 </p>
+
 
 </div>
 
 </section>
+
+
 
 
 
 <section id="work">
 
-<h2>ผลงานของฉัน</h2>
+
+<h2>
+ผลงานของฉัน
+</h2>
 
 
 <div class="gallery">
 
+
 <img src="images/1.jpg">
+
 <img src="images/2.jpg">
+
 <img src="images/3.jpg">
+
 <img src="images/4.jpg">
+
 <img src="images/5.jpg">
+
 <img src="images/6.jpg">
+
 <img src="images/7.jpg">
+
 <img src="images/8.jpg">
+
 <img src="images/9.jpg">
+
 <img src="images/10.jpg">
+
 
 </div>
 
@@ -224,24 +322,32 @@ footer{
 
 
 
+
+
 <section id="contact">
 
-<h2>ติดต่อ</h2>
+
+<h2>
+ติดต่อ
+</h2>
+
 
 <div class="box">
+
 
 <p>
 Facebook : ใส่ชื่อ<br>
 Email : ใส่อีเมล
 </p>
 
-<br>
 
-<a class="btn" href="https://facebook.com">
-Facebook
+<a class="btn" href="#">
+ติดต่อฉัน
 </a>
 
+
 </div>
+
 
 </section>
 
@@ -249,10 +355,12 @@ Facebook
 
 <footer>
 
-© 2026 My Portfolio
+© 2026 Green Music Portfolio
 
 </footer>
 
 
 </body>
 </html>
+
+
