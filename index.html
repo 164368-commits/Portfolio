@@ -5,16 +5,182 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Music Portfolio</title>
+<title>Green Music Portfolio</title>
 
 <style>
 
-body{
-    margin:0;
-    background:#061b0d;
-    color:white;
-    font-family:Arial;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
 }
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:#061b0d;
+color:white;
+}
+
+
+/* เมนู */
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+background:#043d1b;
+padding:15px;
+text-align:center;
+z-index:99;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:8px;
+padding:10px 20px;
+background:#0b6b32;
+border-radius:30px;
+}
+
+nav a:hover{
+background:#00ff66;
+color:black;
+}
+
+
+
+/* หน้าแรก */
+
+header{
+
+height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+text-align:center;
+
+background-size:cover;
+background-position:center;
+
+animation:bgslide 12s infinite;
+
+}
+
+
+@keyframes bgslide{
+
+0%{
+background-image:
+linear-gradient(#0008,#0008),
+url("images/bg1.jpg");
+}
+
+50%{
+background-image:
+linear-gradient(#0008,#0008),
+url("images/bg2.jpg");
+}
+
+100%{
+background-image:
+linear-gradient(#0008,#0008),
+url("images/bg3.jpg");
+}
+
+}
+
+
+
+.profile{
+
+width:200px;
+height:200px;
+
+border-radius:50%;
+
+border:5px solid #00ff66;
+
+object-fit:cover;
+
+}
+
+
+h1{
+
+font-size:45px;
+
+color:#00ff66;
+
+margin:20px;
+
+}
+
+
+
+.btn{
+
+background:#00ff66;
+
+color:black;
+
+padding:15px 40px;
+
+border-radius:30px;
+
+display:inline-block;
+
+margin-top:20px;
+
+text-decoration:none;
+
+font-weight:bold;
+
+}
+
+
+
+
+section{
+
+padding:80px 10%;
+
+}
+
+
+
+h2{
+
+text-align:center;
+
+color:#00ff66;
+
+margin-bottom:30px;
+
+}
+
+
+
+.box{
+
+background:#0d2b17;
+
+padding:30px;
+
+border-radius:20px;
+
+text-align:center;
+
+border:1px solid #00ff66;
+
+}
+
 
 
 /* ผลงาน */
@@ -22,9 +188,11 @@ body{
 .gallery{
 
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+
 gap:20px;
-padding:50px;
 
 }
 
@@ -32,11 +200,18 @@ padding:50px;
 .gallery img{
 
 width:100%;
+
 height:250px;
+
 object-fit:cover;
+
 border-radius:15px;
+
+border:3px solid #0b6b32;
+
 cursor:pointer;
-border:3px solid #00ff66;
+
+transition:.3s;
 
 }
 
@@ -54,6 +229,7 @@ transform:scale(1.05);
 #lightbox{
 
 display:none;
+
 position:fixed;
 
 top:0;
@@ -62,21 +238,23 @@ left:0;
 width:100%;
 height:100%;
 
-background:rgba(0,0,0,0.9);
+background:rgba(0,0,0,.9);
 
 justify-content:center;
+
 align-items:center;
 
-z-index:99;
+z-index:999;
 
 }
 
 
 
-#big{
+#showImage{
 
-max-width:85%;
-max-height:85%;
+max-width:90%;
+
+max-height:90%;
 
 border:5px solid #00ff66;
 
@@ -105,6 +283,7 @@ cursor:pointer;
 }
 
 
+
 .prev{
 
 left:30px;
@@ -112,9 +291,22 @@ left:30px;
 }
 
 
+
 .next{
 
 right:30px;
+
+}
+
+
+
+footer{
+
+background:#021006;
+
+padding:20px;
+
+text-align:center;
 
 }
 
@@ -127,10 +319,83 @@ right:30px;
 <body>
 
 
-<h1 style="text-align:center;color:#00ff66;">
-ผลงานของฉัน
+<nav>
+
+<a href="#home">หน้าแรก</a>
+
+<a href="#about">เกี่ยวกับฉัน</a>
+
+<a href="#work">ผลงาน</a>
+
+<a href="#contact">ติดต่อ</a>
+
+</nav>
+
+
+
+<header id="home">
+
+<div>
+
+<img class="profile"
+src="751134574_1051227694222043_2419989609353775438_n.jpg">
+
+
+<h1>
+แฟ้มสะสมผลงาน
 </h1>
 
+
+<p>
+รณภพ โพธิ์รักษา
+</p>
+
+
+<a class="btn" href="#work">
+ดูผลงาน
+</a>
+
+
+</div>
+
+</header>
+
+
+
+
+<section id="about">
+
+<h2>เกี่ยวกับฉัน</h2>
+
+
+<div class="box">
+
+ชื่อ : รณภพ โพธิ์รักษา
+
+<br><br>
+
+นักเรียนผู้มีความสนใจด้านดนตรี
+
+<br><br>
+
+มุ่งมั่นฝึกฝนและพัฒนาทักษะ
+การบรรเลงเครื่องดนตรี
+
+<br><br>
+
+มีเป้าหมายศึกษาต่อด้านดนตรี
+
+</div>
+
+</section>
+
+
+
+
+
+<section id="work">
+
+<h2>ผลงานของฉัน</h2>
 
 
 <div class="gallery">
@@ -159,23 +424,51 @@ right:30px;
 
 </div>
 
+</section>
 
 
-<!-- รูปใหญ่ -->
+
+
+
+<section id="contact">
+
+<h2>ติดต่อ</h2>
+
+<div class="box">
+
+Facebook : ใส่ชื่อ
+
+<br>
+
+Email : ใส่อีเมล
+
+</div>
+
+</section>
+
+
+
+
+<footer>
+
+© 2026 Green Music Portfolio
+
+</footer>
+
+
+
+
 
 <div id="lightbox">
 
+<button class="prev" onclick="prevImage()">❮</button>
 
-<button class="prev" onclick="prev()">❮</button>
+<img id="showImage">
 
-
-<img id="big">
-
-
-<button class="next" onclick="next()">❯</button>
-
+<button class="next" onclick="nextImage()">❯</button>
 
 </div>
+
 
 
 
@@ -183,7 +476,7 @@ right:30px;
 <script>
 
 
-let img=[
+let images=[
 
 "SWU_10090110702501A-0-D0101_1749800445651_page-0001.jpg",
 
@@ -211,12 +504,11 @@ let img=[
 let index=0;
 
 
-
 function openImage(i){
 
 index=i;
 
-document.getElementById("big").src=img[index];
+document.getElementById("showImage").src=images[index];
 
 document.getElementById("lightbox").style.display="flex";
 
@@ -224,33 +516,33 @@ document.getElementById("lightbox").style.display="flex";
 
 
 
-function next(){
+function nextImage(){
 
 index++;
 
-if(index>=img.length){
+if(index>=images.length){
 
 index=0;
 
 }
 
-document.getElementById("big").src=img[index];
+document.getElementById("showImage").src=images[index];
 
 }
 
 
 
-function prev(){
+function prevImage(){
 
 index--;
 
 if(index<0){
 
-index=img.length-1;
+index=images.length-1;
 
 }
 
-document.getElementById("big").src=img[index];
+document.getElementById("showImage").src=images[index];
 
 }
 
@@ -264,8 +556,7 @@ this.style.display="none";
 
 }
 
-}
-
+};
 
 
 </script>
