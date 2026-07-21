@@ -3,349 +3,115 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Music Portfolio</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>My Portfolio</title>
 
 <style>
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-scroll-behavior:smooth;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
 }
 
 body{
-background:#0f172a;
-color:white;
+    background:#111;
+    color:white;
 }
 
-/* Navbar */
-
-nav{
-position:fixed;
-top:0;
-width:100%;
-background:rgba(0,0,0,.7);
-backdrop-filter:blur(10px);
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:18px 10%;
-z-index:1000;
+header{
+    text-align:center;
+    padding:50px 20px;
+    background:linear-gradient(45deg,#0f2027,#203a43,#2c5364);
 }
 
-nav h2{
-color:#00e5ff;
+header img{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    border:5px solid white;
+    object-fit:cover;
 }
 
-nav ul{
-display:flex;
-list-style:none;
-gap:25px;
+header h1{
+    margin-top:20px;
+    font-size:40px;
 }
 
-nav ul li a{
-color:white;
-text-decoration:none;
-transition:.3s;
+header p{
+    margin-top:10px;
+    color:#ddd;
 }
-
-nav ul li a:hover{
-color:#00e5ff;
-}
-
-/* Hero */
-
-.hero{
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-padding:100px 10%;
-gap:60px;
-flex-wrap:wrap;
-background:linear-gradient(135deg,#111827,#1e3a8a);
-}
-
-.hero img{
-width:320px;
-height:320px;
-object-fit:cover;
-border-radius:50%;
-border:6px solid #00e5ff;
-box-shadow:0 0 40px #00e5ff;
-}
-
-.hero-text h1{
-font-size:55px;
-}
-
-.hero-text span{
-color:#00e5ff;
-}
-
-.hero-text p{
-margin:20px 0;
-font-size:18px;
-line-height:1.8;
-}
-
-.btn{
-display:inline-block;
-padding:15px 35px;
-background:#00e5ff;
-color:#000;
-border-radius:30px;
-text-decoration:none;
-font-weight:bold;
-transition:.3s;
-}
-
-.btn:hover{
-transform:scale(1.08);
-}
-
-/* Section */
 
 section{
-padding:100px 10%;
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    padding:50px 0;
 }
 
-.title{
-text-align:center;
-font-size:40px;
-margin-bottom:50px;
-color:#00e5ff;
+h2{
+    text-align:center;
+    margin-bottom:30px;
+    color:#00e5ff;
 }
-
-/* Gallery */
 
 .gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
 }
 
 .gallery img{
-width:100%;
-height:260px;
-object-fit:cover;
-border-radius:15px;
-transition:.4s;
-cursor:pointer;
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:15px;
+    transition:.3s;
+    cursor:pointer;
 }
 
 .gallery img:hover{
-transform:scale(1.05);
-}
-
-/* Skills */
-
-.skills{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-}
-
-.card{
-background:#1e293b;
-padding:30px;
-border-radius:15px;
-text-align:center;
-transition:.4s;
-}
-
-.card:hover{
-transform:translateY(-10px);
-background:#00e5ff;
-color:#000;
-}
-
-/* Contact */
-
-.contact{
-text-align:center;
-}
-
-.contact button{
-padding:15px 40px;
-font-size:18px;
-border:none;
-background:#00e5ff;
-border-radius:30px;
-cursor:pointer;
-font-weight:bold;
+    transform:scale(1.05);
 }
 
 footer{
-padding:20px;
-text-align:center;
-background:#020617;
-}
-
-.modal{
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,.9);
-justify-content:center;
-align-items:center;
-}
-
-.modal img{
-width:80%;
-max-width:700px;
-border-radius:20px;
-}
-
-.close{
-position:absolute;
-top:20px;
-right:40px;
-font-size:45px;
-cursor:pointer;
-color:white;
-}
-
-@media(max-width:768px){
-
-.hero-text{
-text-align:center;
-}
-
-.hero-text h1{
-font-size:40px;
-}
-
-.hero img{
-width:250px;
-height:250px;
-}
-
+    text-align:center;
+    padding:20px;
+    background:#000;
+    color:#aaa;
 }
 </style>
 
 </head>
 <body>
 
-<nav>
+<header>
 
-<h2>🎵 Music</h2>
+<!-- รูปโปรไฟล์ -->
+<img src="images/profile.jpg" alt="Profile">
 
-<ul>
-<li><a href="#home">หน้าแรก</a></li>
-<li><a href="#about">เกี่ยวกับ</a></li>
-<li><a href="#gallery">ผลงาน</a></li>
-<li><a href="#skills">ความสามารถ</a></li>
-<li><a href="#contact">ติดต่อ</a></li>
-</ul>
+<h1>ชื่อ - นามสกุล</h1>
 
-</nav>
+<p>Portfolio | นักเรียน | นักดนตรี</p>
 
-<!-- Home -->
+</header>
 
-<section class="hero" id="home">
+<section>
 
-<img src="profile.jpg">
-
-<div class="hero-text">
-
-<h1>สวัสดีครับ <span>รณภพ</span></h1>
-
-<p>
-นักดนตรี | มือกลอง | นักแสดงดนตรี<br>
-ยินดีต้อนรับสู่ Portfolio ของผม
-</p>
-
-<a href="#gallery" class="btn">ดูผลงาน</a>
-
-</div>
-
-</section>
-
-<!-- About -->
-
-<section id="about">
-
-<h2 class="title">เกี่ยวกับฉัน</h2>
-
-<p style="font-size:18px;text-align:center;line-height:2;">
-ผมมีความสนใจด้านดนตรีและการแสดงบนเวที
-สามารถเล่นเครื่องดนตรีได้หลายประเภท
-มีประสบการณ์แข่งขันและร่วมกิจกรรมต่าง ๆ
-พร้อมพัฒนาทักษะทางดนตรีอย่างต่อเนื่อง
-</p>
-
-</section>
-
-<!-- Gallery -->
-
-<section id="gallery">
-
-<h2 class="title">ผลงาน</h2>
+<h2>ผลงานของฉัน</h2>
 
 <div class="gallery">
 
-<img src="img1.jpg" onclick="show(this.src)">
-<img src="img2.jpg" onclick="show(this.src)">
-<img src="img3.jpg" onclick="show(this.src)">
-<img src="img4.jpg" onclick="show(this.src)">
-<img src="img5.jpg" onclick="show(this.src)">
-<img src="img6.jpg" onclick="show(this.src)">
-
-</div>
-
-</section>
-
-<!-- Skills -->
-
-<section id="skills">
-
-<h2 class="title">ความสามารถ</h2>
-
-<div class="skills">
-
-<div class="card">
-<h3>🥁 Drum</h3>
-<p>เล่นกลองชุด</p>
-</div>
-
-<div class="card">
-<h3>🎼 Performance</h3>
-<p>แสดงบนเวที</p>
-</div>
-
-<div class="card">
-<h3>🎤 Music</h3>
-<p>ทำงานร่วมกับวงดนตรี</p>
-</div>
-
-</div>
-
-</section>
-
-<!-- Contact -->
-
-<section id="contact">
-
-<h2 class="title">ติดต่อ</h2>
-
-<div class="contact">
-
-<p>Email : your@email.com</p>
-
-<br>
-
-<p>Facebook : Your Name</p>
-
-<br>
-
-<button onclick="hello()">ติดต่อฉัน</button>
+<img src="images/1.jpg">
+<img src="images/2.jpg">
+<img src="images/3.jpg">
+<img src="images/4.jpg">
+<img src="images/5.jpg">
+<img src="images/6.jpg">
+<img src="images/7.jpg">
+<img src="images/8.jpg">
+<img src="images/9.jpg">
+<img src="images/10.jpg">
 
 </div>
 
@@ -353,41 +119,10 @@ height:250px;
 
 <footer>
 
-© 2026 Music Portfolio
+© 2026 My Portfolio
 
 </footer>
 
-<div class="modal" id="modal">
-
-<span class="close" onclick="closeImg()">×</span>
-
-<img id="big">
-
-</div>
-
-<script>
-
-function hello(){
-
-alert("ขอบคุณที่เข้าชม Portfolio");
-
-}
-
-function show(src){
-
-document.getElementById("modal").style.display="flex";
-
-document.getElementById("big").src=src;
-
-}
-
-function closeImg(){
-
-document.getElementById("modal").style.display="none";
-
-}
-
-</script>
-
 </body>
 </html>
+
