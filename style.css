@@ -1,4 +1,4 @@
-*/* กล่องรูปใหญ่ */
+/* กล่องรูปใหญ่ */
 
 #lightbox{
 
@@ -18,15 +18,15 @@ justify-content:center;
 
 align-items:center;
 
-z-index:999;
+z-index:9999;
 
 }
 
 
 
-/* รูปใหญ่ */
+/* รูปที่เปิดใหญ่ */
 
-#big{
+#lightbox img{
 
 max-width:85%;
 
@@ -44,7 +44,7 @@ object-fit:contain;
 
 /* ปุ่มเลื่อน */
 
-#lightbox button{
+button{
 
 position:absolute;
 
@@ -52,7 +52,7 @@ top:50%;
 
 transform:translateY(-50%);
 
-font-size:40px;
+font-size:45px;
 
 width:60px;
 
@@ -70,19 +70,23 @@ cursor:pointer;
 
 font-weight:bold;
 
+transition:.3s;
+
 }
 
 
 
-#lightbox button:hover{
+button:hover{
 
 background:white;
 
+transform:translateY(-50%) scale(1.1);
+
 }
 
 
 
-/* ปุ่มซ้าย */
+/* ปุ่มย้อนกลับ */
 
 .prev{
 
@@ -92,42 +96,10 @@ left:30px;
 
 
 
-/* ปุ่มขวา */
+/* ปุ่มถัดไป */
 
 .next{
 
 right:30px;
-
-}
-
-
-
-/* รูปผลงาน */
-
-.gallery img{
-
-width:100%;
-
-height:250px;
-
-object-fit:cover;
-
-border-radius:15px;
-
-border:3px solid #0b6b32;
-
-cursor:pointer;
-
-transition:0.3s;
-
-}
-
-
-
-.gallery img:hover{
-
-transform:scale(1.05);
-
-border-color:#00ff66;
 
 }
