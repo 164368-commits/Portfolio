@@ -1,62 +1,89 @@
-<script>
+let img = [
 
-// เปิดรูปใหญ่
-function openImage(src){
+"SWU_10090110702501A-0-D0101_1749800445651_page-0001.jpg",
 
-    document.getElementById("lightbox").style.display = "flex";
+"SWU_10090110702501A-0-D0101_1749800445651_page-0002.jpg",
 
-    document.getElementById("showImage").src = src;
+"SWU_10090110702501A-0-D0101_1749800445651_page-0003.jpg",
 
-}
+"SWU_10090110702501A-0-D0101_1749800445651_page-0004.jpg",
 
+"SWU_10090110702501A-0-D0101_1749800445651_page-0005.jpg",
 
-// ปิดรูปใหญ่
-function closeImage(){
+"SWU_10090110702501A-0-D0101_1749800445651_page-0006.jpg",
 
-    document.getElementById("lightbox").style.display = "none";
+"SWU_10090110702501A-0-D0101_1749800445651_page-0007.jpg",
 
-}
+"SWU_10090110702501A-0-D0101_1749800445651_page-0008.jpg",
 
+"SWU_10090110702501A-0-D0101_1749800445651_page-0009.jpg",
 
-// กดปุ่ม ESC เพื่อปิดรูป
-document.addEventListener("keydown",function(event){
+"SWU_10090110702501A-0-D0101_1749800445651_page-00010.jpg"
 
-    if(event.key === "Escape"){
-
-        closeImage();
-
-    }
-
-});
-
-
-// เลื่อนรูปพื้นหลังหน้าแรกอัตโนมัติ
-
-let bg = [
-    "images/bg1.jpg",
-    "images/bg2.jpg",
-    "images/bg3.jpg"
 ];
 
 
-let i = 0;
+let index = 0;
 
 
-setInterval(function(){
+// เปิดรูปใหญ่
 
-    i++;
+function openImage(i){
 
-    if(i >= bg.length){
-        i = 0;
-    }
+index = i;
 
+document.getElementById("big").src = img[index];
 
-    document.getElementById("home").style.backgroundImage =
-    "linear-gradient(rgba(0,60,25,.7),rgba(0,0,0,.8)),url('" 
-    + bg[i] + "')";
+document.getElementById("lightbox").style.display = "flex";
 
-
-},5000);
+}
 
 
-</script>
+
+// เลื่อนไปข้างหน้า
+
+function next(){
+
+index++;
+
+if(index >= img.length){
+
+index = 0;
+
+}
+
+document.getElementById("big").src = img[index];
+
+}
+
+
+
+// เลื่อนย้อนกลับ
+
+function prev(){
+
+index--;
+
+if(index < 0){
+
+index = img.length - 1;
+
+}
+
+document.getElementById("big").src = img[index];
+
+}
+
+
+
+// ปิดรูป
+
+document.getElementById("lightbox").onclick = function(e){
+
+if(e.target.id == "lightbox"){
+
+this.style.display = "none";
+
+}
+
+};
