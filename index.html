@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -28,27 +29,45 @@ color:white;
 /* เมนู */
 
 nav{
+
 position:fixed;
 top:0;
 width:100%;
+
 background:#043d1b;
+
 padding:15px;
+
 text-align:center;
-z-index:10;
+
+z-index:99;
+
 }
+
 
 nav a{
+
 color:white;
+
 text-decoration:none;
+
 margin:8px;
+
 padding:10px 20px;
-border-radius:25px;
+
 background:#0b6b32;
+
+border-radius:30px;
+
 }
 
+
 nav a:hover{
+
 background:#00ff66;
+
 color:#003d16;
+
 }
 
 
@@ -58,38 +77,100 @@ color:#003d16;
 header{
 
 height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
 
-background:
-linear-gradient(
-rgba(0,60,25,.7),
-rgba(0,0,0,.8)),
-url("images/bg.jpg");
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
 
 background-size:cover;
 
+background-position:center;
+
+animation:bgmove 15s infinite;
+
 }
+
+
+/* พื้นหลังเลื่อน */
+
+@keyframes bgmove{
+
+
+0%{
+
+background-image:
+linear-gradient(
+rgba(0,60,25,.7),
+rgba(0,0,0,.8)),
+url("images/bg1.jpg");
+
+}
+
+
+33%{
+
+background-image:
+linear-gradient(
+rgba(0,60,25,.7),
+rgba(0,0,0,.8)),
+url("images/bg2.jpg");
+
+}
+
+
+66%{
+
+background-image:
+linear-gradient(
+rgba(0,60,25,.7),
+rgba(0,0,0,.8)),
+url("images/bg3.jpg");
+
+}
+
+
+100%{
+
+background-image:
+linear-gradient(
+rgba(0,60,25,.7),
+rgba(0,0,0,.8)),
+url("images/bg1.jpg");
+
+}
+
+
+}
+
 
 
 .profile{
 
 width:200px;
+
 height:200px;
+
 border-radius:50%;
+
 border:5px solid #00ff66;
+
 object-fit:cover;
 
 }
 
 
+
 h1{
 
 font-size:45px;
-margin:20px;
+
 color:#00ff66;
+
+margin:20px;
 
 }
 
@@ -98,20 +179,20 @@ color:#00ff66;
 .btn{
 
 display:inline-block;
+
 margin-top:20px;
+
 padding:15px 40px;
+
 background:#00ff66;
+
 color:#003d16;
+
 border-radius:30px;
+
 text-decoration:none;
+
 font-weight:bold;
-
-}
-
-
-.btn:hover{
-
-background:white;
 
 }
 
@@ -126,69 +207,73 @@ padding:80px 10%;
 }
 
 
+
 h2{
 
 text-align:center;
+
 color:#00ff66;
-margin-bottom:35px;
+
+margin-bottom:30px;
 
 }
+
 
 
 .box{
 
 background:#0d2b17;
+
 padding:30px;
+
 border-radius:20px;
-text-align:center;
+
 border:1px solid #00ff66;
+
+text-align:center;
 
 }
 
 
 
-/* สไลด์รูป */
+/* ผลงาน */
 
-.slider{
+.gallery{
 
-display:flex;
-justify-content:center;
-align-items:center;
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+
 gap:20px;
 
 }
 
 
-.slider img{
+.gallery img{
 
-width:70%;
-max-width:700px;
-height:400px;
+width:100%;
+
+height:250px;
+
 object-fit:cover;
-border-radius:20px;
-border:5px solid #00ff66;
+
+border-radius:15px;
+
+border:3px solid #0b6b32;
+
 cursor:pointer;
+
+transition:.3s;
 
 }
 
 
+.gallery img:hover{
 
-.slider button{
+transform:scale(1.05);
 
-background:#00ff66;
-color:#003d16;
-border:none;
-font-size:35px;
-padding:10px 20px;
-border-radius:50%;
-cursor:pointer;
-
-}
-
-
-.slider button:hover{
-
-background:white;
+border-color:#00ff66;
 
 }
 
@@ -199,14 +284,23 @@ background:white;
 #lightbox{
 
 display:none;
+
 position:fixed;
+
 top:0;
+
 left:0;
+
 width:100%;
+
 height:100%;
+
 background:rgba(0,0,0,.9);
+
 justify-content:center;
+
 align-items:center;
+
 z-index:100;
 
 }
@@ -215,21 +309,25 @@ z-index:100;
 #lightbox img{
 
 max-width:90%;
+
 max-height:90%;
+
 border:5px solid #00ff66;
+
 border-radius:20px;
 
 }
 
 
 
-/* footer */
-
 footer{
 
 background:#021006;
+
 padding:20px;
+
 text-align:center;
+
 color:#aaa;
 
 }
@@ -246,8 +344,11 @@ color:#aaa;
 <nav>
 
 <a href="#home">หน้าแรก</a>
+
 <a href="#about">เกี่ยวกับฉัน</a>
+
 <a href="#work">ผลงาน</a>
+
 <a href="#contact">ติดต่อ</a>
 
 </nav>
@@ -258,8 +359,7 @@ color:#aaa;
 
 <div>
 
-<img class="profile"
-src="751134574_1051227694222043_2419989609353775438_n.jpg">
+<img class="profile" src="images/profile.jpg">
 
 
 <h1>
@@ -283,39 +383,29 @@ src="751134574_1051227694222043_2419989609353775438_n.jpg">
 
 
 
-
 <section id="about">
 
 <h2>เกี่ยวกับฉัน</h2>
 
-
 <div class="box">
-
-<p>
 
 ชื่อ : รณภพ โพธิ์รักษา
 
 <br><br>
 
-นักเรียนผู้มีความสนใจด้านดนตรี
-มีความตั้งใจในการฝึกฝนและพัฒนาทักษะการบรรเลงเครื่องดนตรี
+นักเรียนที่มีความสนใจด้านดนตรี
+มุ่งมั่นพัฒนาทักษะการบรรเลง
+และสร้างสรรค์ผลงานทางดนตรี
 
 <br><br>
 
-ดนตรีช่วยพัฒนาความคิดสร้างสรรค์
-การทำงานร่วมกับผู้อื่น และการสื่อสาร
+มีเป้าหมายศึกษาต่อด้านดนตรี
+เพื่อพัฒนาความสามารถสู่สายอาชีพ
 
-<br><br>
-
-เป้าหมายคือศึกษาต่อด้านดนตรี
-และสร้างผลงานในสายอาชีพต่อไป
-
-</p>
 
 </div>
 
 </section>
-
 
 
 
@@ -324,24 +414,24 @@ src="751134574_1051227694222043_2419989609353775438_n.jpg">
 <h2>ผลงานของฉัน</h2>
 
 
-<div class="slider">
-
-<button onclick="prevImage()">❮</button>
+<div class="gallery">
 
 
-<img id="slideImage"
-src="SWU_10090110702501A-0-D0101_1749800445651_page-0001.jpg">
-
-
-<button onclick="nextImage()">❯</button>
+<img src="images/work1.jpg" onclick="openImage(this.src)">
+<img src="images/work2.jpg" onclick="openImage(this.src)">
+<img src="images/work3.jpg" onclick="openImage(this.src)">
+<img src="images/work4.jpg" onclick="openImage(this.src)">
+<img src="images/work5.jpg" onclick="openImage(this.src)">
+<img src="images/work6.jpg" onclick="openImage(this.src)">
+<img src="images/work7.jpg" onclick="openImage(this.src)">
+<img src="images/work8.jpg" onclick="openImage(this.src)">
+<img src="images/work9.jpg" onclick="openImage(this.src)">
+<img src="images/work10.jpg" onclick="openImage(this.src)">
 
 
 </div>
 
-
 </section>
-
-
 
 
 
@@ -351,21 +441,14 @@ src="SWU_10090110702501A-0-D0101_1749800445651_page-0001.jpg">
 
 <div class="box">
 
-<p>
 Facebook : ใส่ชื่อ<br>
+
 Email : ใส่อีเมล
-</p>
-
-
-<a class="btn" href="#">
-ติดต่อฉัน
-</a>
 
 
 </div>
 
 </section>
-
 
 
 
@@ -386,90 +469,14 @@ Email : ใส่อีเมล
 
 
 
-
 <script>
 
 
-let pictures=[
-
-"SWU_10090110702501A-0-D0101_1749800445651_page-0001.jpg",
-
-"SWU_10090110702501A-0-D0101_1749800445651_page-0002.jpg",
-
-"SWU_10090110702501A-0-D0101_1749800445651_page-0003.jpg",
-
-"SWU_10090110702501A-0-D0101_1749800445651_page-0004.jpg",
-
-"SWU_10090110702501A-0-D0101_1749800445651_page-0005.jpg",
-
-"SWU_10090110702501A-0-D0101_1749800445651_page-0006.jpg",
-
-"SWU_10090110702501A-0-D0101_1749800445651_page-0007.jpg",
-
-"SWU_10090110702501A-0-D0101_1749800445651_page-0008.jpg",
-
-"SWU_10090110702501A-0-D0101_1749800445651_page-0009.jpg",
-
-"SWU_10090110702501A-0-D0101_1749800445651_page-0010.jpg"
-
-];
-
-
-let index=0;
-
-
-function showSlide(){
-
-document.getElementById("slideImage").src=pictures[index];
-
-}
-
-
-
-function nextImage(){
-
-index++;
-
-if(index>=pictures.length){
-
-index=0;
-
-}
-
-showSlide();
-
-}
-
-
-
-function prevImage(){
-
-index--;
-
-if(index<0){
-
-index=pictures.length-1;
-
-}
-
-showSlide();
-
-}
-
-
-// เลื่อนอัตโนมัติ
-
-setInterval(nextImage,3000);
-
-
-
-// กดรูปดูใหญ่
-
-document.getElementById("slideImage").onclick=function(){
+function openImage(src){
 
 document.getElementById("lightbox").style.display="flex";
 
-document.getElementById("showImage").src=this.src;
+document.getElementById("showImage").src=src;
 
 }
 
@@ -483,6 +490,7 @@ document.getElementById("lightbox").style.display="none";
 
 
 </script>
+
 
 
 </body>
