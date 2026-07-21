@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ronnaphop | Music Portfolio</title>
+<title>Music Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -17,64 +17,56 @@ scroll-behavior:smooth;
 }
 
 body{
-background:#090909;
+background:#0f172a;
 color:white;
-overflow-x:hidden;
-}
-
-/* Background */
-body::before{
-content:"";
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:
-linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.8)),
-url("https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=1600&q=80");
-background-size:cover;
-background-position:center;
-z-index:-1;
 }
 
 /* Navbar */
+
 nav{
 position:fixed;
+top:0;
 width:100%;
-padding:20px 10%;
+background:rgba(0,0,0,.7);
+backdrop-filter:blur(10px);
 display:flex;
 justify-content:space-between;
 align-items:center;
-background:rgba(0,0,0,.5);
-backdrop-filter:blur(10px);
-z-index:999;
+padding:18px 10%;
+z-index:1000;
 }
 
 nav h2{
-color:#FFD700;
+color:#00e5ff;
 }
 
-nav a{
+nav ul{
+display:flex;
+list-style:none;
+gap:25px;
+}
+
+nav ul li a{
 color:white;
 text-decoration:none;
-margin-left:20px;
 transition:.3s;
 }
 
-nav a:hover{
-color:#FFD700;
+nav ul li a:hover{
+color:#00e5ff;
 }
 
 /* Hero */
+
 .hero{
 height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-padding:80px;
+padding:100px 10%;
 gap:60px;
 flex-wrap:wrap;
+background:linear-gradient(135deg,#111827,#1e3a8a);
 }
 
 .hero img{
@@ -82,47 +74,41 @@ width:320px;
 height:320px;
 object-fit:cover;
 border-radius:50%;
-border:6px solid #FFD700;
-box-shadow:0 0 40px #FFD700;
-}
-
-.hero-text{
-max-width:550px;
+border:6px solid #00e5ff;
+box-shadow:0 0 40px #00e5ff;
 }
 
 .hero-text h1{
 font-size:55px;
-color:#FFD700;
 }
 
-.hero-text h3{
-font-weight:300;
-margin:10px 0;
+.hero-text span{
+color:#00e5ff;
 }
 
 .hero-text p{
-margin-top:15px;
+margin:20px 0;
+font-size:18px;
 line-height:1.8;
-color:#ddd;
 }
 
 .btn{
 display:inline-block;
-margin-top:25px;
-padding:14px 35px;
-background:#FFD700;
+padding:15px 35px;
+background:#00e5ff;
 color:#000;
+border-radius:30px;
 text-decoration:none;
 font-weight:bold;
-border-radius:50px;
 transition:.3s;
 }
 
 .btn:hover{
-transform:translateY(-5px);
+transform:scale(1.08);
 }
 
 /* Section */
+
 section{
 padding:100px 10%;
 }
@@ -131,41 +117,24 @@ padding:100px 10%;
 text-align:center;
 font-size:40px;
 margin-bottom:50px;
-color:#FFD700;
-}
-
-/* About */
-.about{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:40px;
-}
-
-.card{
-background:rgba(255,255,255,.08);
-padding:30px;
-border-radius:20px;
-backdrop-filter:blur(15px);
-transition:.4s;
-}
-
-.card:hover{
-transform:translateY(-10px);
+color:#00e5ff;
 }
 
 /* Gallery */
+
 .gallery{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:25px;
 }
 
 .gallery img{
 width:100%;
-height:250px;
+height:260px;
 object-fit:cover;
-border-radius:20px;
+border-radius:15px;
 transition:.4s;
+cursor:pointer;
 }
 
 .gallery img:hover{
@@ -173,53 +142,79 @@ transform:scale(1.05);
 }
 
 /* Skills */
+
 .skills{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:25px;
 }
 
-.skill{
-background:#111;
-padding:25px;
+.card{
+background:#1e293b;
+padding:30px;
 border-radius:15px;
+text-align:center;
+transition:.4s;
 }
 
-.progress{
-width:100%;
-height:10px;
-background:#444;
-border-radius:20px;
-margin-top:10px;
-overflow:hidden;
-}
-
-.progress span{
-display:block;
-height:100%;
-background:#FFD700;
+.card:hover{
+transform:translateY(-10px);
+background:#00e5ff;
+color:#000;
 }
 
 /* Contact */
+
 .contact{
 text-align:center;
 }
 
-.contact p{
-margin:15px 0;
+.contact button{
+padding:15px 40px;
 font-size:18px;
+border:none;
+background:#00e5ff;
+border-radius:30px;
+cursor:pointer;
+font-weight:bold;
 }
 
 footer{
-padding:25px;
+padding:20px;
 text-align:center;
-background:#000;
-margin-top:40px;
+background:#020617;
+}
+
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.9);
+justify-content:center;
+align-items:center;
+}
+
+.modal img{
+width:80%;
+max-width:700px;
+border-radius:20px;
+}
+
+.close{
+position:absolute;
+top:20px;
+right:40px;
+font-size:45px;
+cursor:pointer;
+color:white;
 }
 
 @media(max-width:768px){
 
-.hero{
+.hero-text{
 text-align:center;
 }
 
@@ -240,36 +235,34 @@ height:250px;
 
 <nav>
 
-<h2>🎵 Portfolio</h2>
+<h2>🎵 Music</h2>
 
-<div>
-<a href="#about">เกี่ยวกับ</a>
-<a href="#gallery">ผลงาน</a>
-<a href="#skills">ทักษะ</a>
-<a href="#contact">ติดต่อ</a>
-</div>
+<ul>
+<li><a href="#home">หน้าแรก</a></li>
+<li><a href="#about">เกี่ยวกับ</a></li>
+<li><a href="#gallery">ผลงาน</a></li>
+<li><a href="#skills">ความสามารถ</a></li>
+<li><a href="#contact">ติดต่อ</a></li>
+</ul>
 
 </nav>
 
-<!-- Hero -->
+<!-- Home -->
 
-<section class="hero">
+<section class="hero" id="home">
 
-<img src="profile.jpg" alt="Profile">
+<img src="profile.jpg">
 
 <div class="hero-text">
 
-<h1>Ronnaphop</h1>
-
-<h3>Musician • Performer • Creator</h3>
+<h1>สวัสดีครับ <span>รณภพ</span></h1>
 
 <p>
-นักดนตรีผู้หลงใหลในการสร้างสรรค์เสียงเพลง
-มีประสบการณ์การแสดงบนเวที การแข่งขัน และการเล่นดนตรีร่วมกับวง
-พร้อมพัฒนาทักษะด้านดนตรีอย่างต่อเนื่อง
+นักดนตรี | มือกลอง | นักแสดงดนตรี<br>
+ยินดีต้อนรับสู่ Portfolio ของผม
 </p>
 
-<a href="#gallery" class="btn">ชมผลงาน</a>
+<a href="#gallery" class="btn">ดูผลงาน</a>
 
 </div>
 
@@ -279,42 +272,14 @@ height:250px;
 
 <section id="about">
 
-<h2 class="title">About Me</h2>
+<h2 class="title">เกี่ยวกับฉัน</h2>
 
-<div class="about">
-
-<div class="card">
-
-<h2>🎼 ประวัติ</h2>
-
-<p>
-
-ชื่อ : รณภพ โพธิรักษา<br>
-
-ระดับชั้น : มัธยมศึกษาปีที่ 6<br>
-
-ความสามารถ : Guitar, Bass, Drum, Keyboard, Singing
-
+<p style="font-size:18px;text-align:center;line-height:2;">
+ผมมีความสนใจด้านดนตรีและการแสดงบนเวที
+สามารถเล่นเครื่องดนตรีได้หลายประเภท
+มีประสบการณ์แข่งขันและร่วมกิจกรรมต่าง ๆ
+พร้อมพัฒนาทักษะทางดนตรีอย่างต่อเนื่อง
 </p>
-
-</div>
-
-<div class="card">
-
-<h2>🎤 เป้าหมาย</h2>
-
-<p>
-
-มุ่งมั่นศึกษาต่อด้านดุริยางคศิลป์
-เพื่อพัฒนาทักษะการแสดง
-การเรียบเรียงเสียงประสาน
-และการสร้างสรรค์ผลงานดนตรีระดับมืออาชีพ
-
-</p>
-
-</div>
-
-</div>
 
 </section>
 
@@ -322,21 +287,16 @@ height:250px;
 
 <section id="gallery">
 
-<h2 class="title">Performance Gallery</h2>
+<h2 class="title">ผลงาน</h2>
 
 <div class="gallery">
 
-<img src="performance1.jpg">
-
-<img src="performance2.jpg">
-
-<img src="performance3.jpg">
-
-<img src="performance4.jpg">
-
-<img src="performance5.jpg">
-
-<img src="performance6.jpg">
+<img src="img1.jpg" onclick="show(this.src)">
+<img src="img2.jpg" onclick="show(this.src)">
+<img src="img3.jpg" onclick="show(this.src)">
+<img src="img4.jpg" onclick="show(this.src)">
+<img src="img5.jpg" onclick="show(this.src)">
+<img src="img6.jpg" onclick="show(this.src)">
 
 </div>
 
@@ -346,80 +306,23 @@ height:250px;
 
 <section id="skills">
 
-<h2 class="title">Music Skills</h2>
+<h2 class="title">ความสามารถ</h2>
 
 <div class="skills">
 
-<div class="skill">
-
-Guitar
-
-<div class="progress">
-
-<span style="width:95%"></span>
-
+<div class="card">
+<h3>🥁 Drum</h3>
+<p>เล่นกลองชุด</p>
 </div>
 
+<div class="card">
+<h3>🎼 Performance</h3>
+<p>แสดงบนเวที</p>
 </div>
 
-<div class="skill">
-
-Bass
-
-<div class="progress">
-
-<span style="width:90%"></span>
-
-</div>
-
-</div>
-
-<div class="skill">
-
-Keyboard
-
-<div class="progress">
-
-<span style="width:80%"></span>
-
-</div>
-
-</div>
-
-<div class="skill">
-
-Drums
-
-<div class="progress">
-
-<span style="width:75%"></span>
-
-</div>
-
-</div>
-
-<div class="skill">
-
-Performance
-
-<div class="progress">
-
-<span style="width:98%"></span>
-
-</div>
-
-</div>
-
-<div class="skill">
-
-Music Production
-
-<div class="progress">
-
-<span style="width:70%"></span>
-
-</div>
-
+<div class="card">
+<h3>🎤 Music</h3>
+<p>ทำงานร่วมกับวงดนตรี</p>
 </div>
 
 </div>
@@ -430,17 +333,19 @@ Music Production
 
 <section id="contact">
 
-<h2 class="title">Contact</h2>
+<h2 class="title">ติดต่อ</h2>
 
 <div class="contact">
 
-<p>📧 Email : your@email.com</p>
+<p>Email : your@email.com</p>
 
-<p>📱 โทร : 08X-XXX-XXXX</p>
+<br>
 
-<p>📘 Facebook : Your Facebook</p>
+<p>Facebook : Your Name</p>
 
-<p>📷 Instagram : @yourmusic</p>
+<br>
+
+<button onclick="hello()">ติดต่อฉัน</button>
 
 </div>
 
@@ -448,9 +353,44 @@ Music Production
 
 <footer>
 
-© 2026 Ronnaphop Music Portfolio
+© 2026 Music Portfolio
 
 </footer>
+
+<div class="modal" id="modal">
+
+<span class="close" onclick="closeImg()">×</span>
+
+<img id="big">
+
+</div>
+
+<script>
+
+function hello(){
+
+alert("ขอบคุณที่เข้าชม Portfolio");
+
+}
+
+function show(src){
+
+document.getElementById("modal").style.display="flex";
+
+document.getElementById("big").src=src;
+
+}
+
+function closeImg(){
+
+document.getElementById("modal").style.display="none";
+
+}
+
+</script>
+
+</body>
+</html>
 
 </body>
 </html>
