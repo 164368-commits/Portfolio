@@ -29,47 +29,30 @@ color:white;
 /* เมนู */
 
 nav{
-
 position:fixed;
 top:0;
 width:100%;
-
 background:#043d1b;
-
 padding:15px;
-
 text-align:center;
-
 z-index:99;
-
 }
 
 
 nav a{
-
 color:white;
-
 text-decoration:none;
-
 margin:8px;
-
 padding:10px 20px;
-
 background:#0b6b32;
-
 border-radius:30px;
-
 }
 
 
 nav a:hover{
-
 background:#00ff66;
-
 color:#003d16;
-
 }
-
 
 
 /* หน้าแรก */
@@ -79,70 +62,57 @@ header{
 height:100vh;
 
 display:flex;
-
 justify-content:center;
-
 align-items:center;
 
 text-align:center;
 
 background-size:cover;
-
 background-position:center;
 
-animation:bgmove 15s infinite;
+animation:bgslide 15s infinite;
 
 }
 
 
 /* พื้นหลังเลื่อน */
 
-@keyframes bgmove{
-
+@keyframes bgslide{
 
 0%{
-
 background-image:
 linear-gradient(
 rgba(0,60,25,.7),
 rgba(0,0,0,.8)),
 url("images/bg1.jpg");
-
 }
 
 
 33%{
-
 background-image:
 linear-gradient(
 rgba(0,60,25,.7),
 rgba(0,0,0,.8)),
 url("images/bg2.jpg");
-
 }
 
 
 66%{
-
 background-image:
 linear-gradient(
 rgba(0,60,25,.7),
 rgba(0,0,0,.8)),
 url("images/bg3.jpg");
-
 }
 
 
 100%{
-
 background-image:
 linear-gradient(
 rgba(0,60,25,.7),
 rgba(0,0,0,.8)),
 url("images/bg1.jpg");
-
 }
-
 
 }
 
@@ -151,7 +121,6 @@ url("images/bg1.jpg");
 .profile{
 
 width:200px;
-
 height:200px;
 
 border-radius:50%;
@@ -168,9 +137,9 @@ h1{
 
 font-size:45px;
 
-color:#00ff66;
-
 margin:20px;
+
+color:#00ff66;
 
 }
 
@@ -197,8 +166,6 @@ font-weight:bold;
 }
 
 
-
-/* เนื้อหา */
 
 section{
 
@@ -236,6 +203,7 @@ text-align:center;
 
 
 
+
 /* ผลงาน */
 
 .gallery{
@@ -248,6 +216,7 @@ repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
 
 }
+
 
 
 .gallery img{
@@ -276,6 +245,7 @@ transform:scale(1.05);
 border-color:#00ff66;
 
 }
+
 
 
 
@@ -320,6 +290,7 @@ border-radius:20px;
 
 
 
+
 footer{
 
 background:#021006;
@@ -355,9 +326,11 @@ color:#aaa;
 
 
 
+
 <header id="home">
 
 <div>
+
 
 <img class="profile" src="images/profile.jpg">
 
@@ -383,24 +356,29 @@ color:#aaa;
 
 
 
+
+
 <section id="about">
 
-<h2>เกี่ยวกับฉัน</h2>
+<h2>
+เกี่ยวกับฉัน
+</h2>
+
 
 <div class="box">
+
 
 ชื่อ : รณภพ โพธิ์รักษา
 
 <br><br>
 
-นักเรียนที่มีความสนใจด้านดนตรี
-มุ่งมั่นพัฒนาทักษะการบรรเลง
-และสร้างสรรค์ผลงานทางดนตรี
+นักเรียนผู้มีความสนใจด้านดนตรี 
+มุ่งมั่นฝึกฝนและพัฒนาทักษะการบรรเลงเครื่องดนตรี
 
 <br><br>
 
 มีเป้าหมายศึกษาต่อด้านดนตรี
-เพื่อพัฒนาความสามารถสู่สายอาชีพ
+เพื่อสร้างผลงานในสายอาชีพ
 
 
 </div>
@@ -409,9 +387,14 @@ color:#aaa;
 
 
 
+
+
 <section id="work">
 
-<h2>ผลงานของฉัน</h2>
+
+<h2>
+ผลงานของฉัน
+</h2>
 
 
 <div class="gallery">
@@ -431,24 +414,36 @@ color:#aaa;
 
 </div>
 
+
 </section>
+
+
 
 
 
 <section id="contact">
 
-<h2>ติดต่อ</h2>
+
+<h2>
+ติดต่อ
+</h2>
+
 
 <div class="box">
 
-Facebook : ใส่ชื่อ<br>
+
+Facebook : ใส่ชื่อ
+
+<br>
 
 Email : ใส่อีเมล
 
 
 </div>
 
+
 </section>
+
 
 
 
@@ -461,11 +456,14 @@ Email : ใส่อีเมล
 
 
 
+<!-- เปิดรูปใหญ่ -->
+
 <div id="lightbox" onclick="closeImage()">
 
 <img id="showImage">
 
 </div>
+
 
 
 
@@ -490,7 +488,6 @@ document.getElementById("lightbox").style.display="none";
 
 
 </script>
-
 
 
 </body>
