@@ -1,9 +1,33 @@
-// แสดงข้อความต้อนรับ
-window.onload = function () {
-    alert("ยินดีต้อนรับสู่ Portfolio ของ Ronnaphop");
-};
+// เปิดรูปใหญ่
 
-// ปุ่ม Dark Mode
-function toggleDarkMode() {
-    document.body.classList.toggle("dark-mode");
+function openImage(src){
+
+    document.getElementById("lightbox").style.display = "flex";
+
+    document.getElementById("showImage").src = src;
+
 }
+
+
+
+// ปิดรูปใหญ่
+
+function closeImage(){
+
+    document.getElementById("lightbox").style.display = "none";
+
+}
+
+
+
+// กด ESC เพื่อปิดรูป
+
+document.addEventListener("keydown", function(event){
+
+    if(event.key === "Escape"){
+
+        closeImage();
+
+    }
+
+});
