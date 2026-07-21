@@ -1,4 +1,4 @@
-let img=[
+let img = [
 
 "SWU_10090110702501A-0-D0101_1749800445651_page-0001.jpg",
 "SWU_10090110702501A-0-D0101_1749800445651_page-0002.jpg",
@@ -14,21 +14,23 @@ let img=[
 ];
 
 
-let index=0;
+let index = 0;
 
 
+// เปิดรูปใหญ่
 
 function openImage(i){
 
-index=i;
+index = i;
 
-document.getElementById("big").src=img[index];
+document.getElementById("big").src = img[index];
 
-document.getElementById("lightbox").style.display="flex";
+document.getElementById("lightbox").style.display = "flex";
 
 }
 
 
+// เลื่อนไปข้างหน้า
 
 function next(){
 
@@ -36,15 +38,16 @@ index++;
 
 if(index >= img.length){
 
-index=0;
+index = 0;
 
 }
 
-document.getElementById("big").src=img[index];
+document.getElementById("big").src = img[index];
 
 }
 
 
+// เลื่อนย้อนกลับ
 
 function prev(){
 
@@ -52,23 +55,22 @@ index--;
 
 if(index < 0){
 
-index=img.length-1;
+index = img.length-1;
 
 }
 
-document.getElementById("big").src=img[index];
+document.getElementById("big").src = img[index];
 
 }
 
 
+// ปิดรูป
 
-// คลิกพื้นหลังเพื่อปิด
+document.getElementById("lightbox").onclick = function(e){
 
-document.getElementById("lightbox").onclick=function(e){
+if(e.target.id == "lightbox"){
 
-if(e.target.id=="lightbox"){
-
-document.getElementById("lightbox").style.display="none";
+this.style.display = "none";
 
 }
 
