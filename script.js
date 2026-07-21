@@ -1,113 +1,77 @@
-<script>
-
-let img = [
+let img=[
 
 "SWU_10090110702501A-0-D0101_1749800445651_page-0001.jpg",
+
 "SWU_10090110702501A-0-D0101_1749800445651_page-0002.jpg",
+
 "SWU_10090110702501A-0-D0101_1749800445651_page-0003.jpg",
+
 "SWU_10090110702501A-0-D0101_1749800445651_page-0004.jpg",
+
 "SWU_10090110702501A-0-D0101_1749800445651_page-0005.jpg",
+
 "SWU_10090110702501A-0-D0101_1749800445651_page-0006.jpg",
+
 "SWU_10090110702501A-0-D0101_1749800445651_page-0007.jpg",
+
 "SWU_10090110702501A-0-D0101_1749800445651_page-0008.jpg",
+
 "SWU_10090110702501A-0-D0101_1749800445651_page-0009.jpg",
-"SWU_10090110702501A-0-D0101_1749800445651_page-0010.jpg"
+
+"SWU_10090110702501A-0-D0101_1749800445651_page-00010.jpg"
 
 ];
 
 
-let index = 0;
+let index=0;
 
-
-// เปิดรูปใหญ่
 
 function openImage(i){
 
-    index = i;
+index=i;
 
-    document.getElementById("big").src = img[index];
+document.getElementById("showImage").src=img[index];
 
-    document.getElementById("lightbox").style.display = "flex";
-
-}
-
-
-
-// รูปถัดไป
-
-function next(){
-
-    index++;
-
-    if(index >= img.length){
-
-        index = 0;
-
-    }
-
-    document.getElementById("big").src = img[index];
+document.getElementById("lightbox").style.display="flex";
 
 }
 
 
 
-// รูปก่อนหน้า
+function nextImage(){
 
-function prev(){
+index++;
 
-    index--;
+if(index>=img.length){
 
-    if(index < 0){
+index=0;
 
-        index = img.length - 1;
+}
 
-    }
-
-    document.getElementById("big").src = img[index];
+document.getElementById("showImage").src=img[index];
 
 }
 
 
 
-// กดพื้นหลังเพื่อปิด
+function prevImage(){
 
-document.getElementById("lightbox").onclick = function(e){
+index--;
 
-    if(e.target.id == "lightbox"){
+if(index<0){
 
-        this.style.display = "none";
+index=img.length-1;
 
-    }
+}
+
+document.getElementById("showImage").src=img[index];
 
 }
 
 
 
-// ใช้ปุ่มคีย์บอร์ด ← →
+function closeImage(){
 
-document.addEventListener("keydown",function(e){
+document.getElementById("lightbox").style.display="none";
 
-    if(e.key === "ArrowRight"){
-
-        next();
-
-    }
-
-
-    if(e.key === "ArrowLeft"){
-
-        prev();
-
-    }
-
-
-    if(e.key === "Escape"){
-
-        document.getElementById("lightbox").style.display="none";
-
-    }
-
-});
-
-
-</script>
+}
