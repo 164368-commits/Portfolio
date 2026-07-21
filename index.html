@@ -18,6 +18,29 @@
 html{
     scroll-behavior:smooth;
 }
+    <div id="lightbox" onclick="closeImage()">
+    <img id="showImage">
+</div>
+
+
+<script>
+
+function openImage(src){
+
+    document.getElementById("lightbox").style.display="flex";
+
+    document.getElementById("showImage").src=src;
+
+}
+
+
+function closeImage(){
+
+    document.getElementById("lightbox").style.display="none";
+
+}
+
+</script>
 
 body{
     background:#061b0d;
