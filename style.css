@@ -1,249 +1,108 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,sans-serif;
-}
+*/* กล่องรูปใหญ่ */
 
-html{
-    scroll-behavior:smooth;
-}
+#lightbox{
 
+display:none;
 
-body{
-    background:#061b0d;
-    color:white;
-}
+position:fixed;
 
+top:0;
+left:0;
 
-/* เมนู */
+width:100%;
+height:100%;
 
-nav{
-    position:fixed;
-    top:0;
-    width:100%;
-    background:#043d1b;
-    padding:15px;
-    text-align:center;
-    z-index:99;
-}
+background:rgba(0,0,0,0.9);
 
+justify-content:center;
 
-nav a{
-    color:white;
-    text-decoration:none;
-    margin:8px;
-    padding:10px 20px;
-    background:#0b6b32;
-    border-radius:30px;
-    transition:.3s;
-}
+align-items:center;
 
-
-nav a:hover{
-    background:#00ff66;
-    color:#003d16;
-}
-
-
-
-/* หน้าแรก */
-
-header{
-
-    height:100vh;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    text-align:center;
-
-    background-size:cover;
-    background-position:center;
-
-    animation:bgslide 15s infinite;
+z-index:999;
 
 }
 
 
 
-/* พื้นหลังเปลี่ยนรูป */
+/* รูปใหญ่ */
 
-@keyframes bgslide{
+#big{
 
-0%{
-background-image:
-linear-gradient(
-rgba(0,60,25,.7),
-rgba(0,0,0,.8)),
-url("images/bg1.jpg");
-}
+max-width:85%;
 
-
-33%{
-background-image:
-linear-gradient(
-rgba(0,60,25,.7),
-rgba(0,0,0,.8)),
-url("images/bg2.jpg");
-}
-
-
-66%{
-background-image:
-linear-gradient(
-rgba(0,60,25,.7),
-rgba(0,0,0,.8)),
-url("images/bg3.jpg");
-}
-
-
-100%{
-background-image:
-linear-gradient(
-rgba(0,60,25,.7),
-rgba(0,0,0,.8)),
-url("images/bg1.jpg");
-}
-
-}
-
-
-
-
-/* รูปโปรไฟล์ */
-
-.profile{
-
-width:200px;
-height:200px;
-
-border-radius:50%;
+max-height:85%;
 
 border:5px solid #00ff66;
 
-object-fit:cover;
+border-radius:20px;
 
-animation:zoom 2s;
-
-}
-
-
-@keyframes zoom{
-
-from{
-transform:scale(0);
-}
-
-to{
-transform:scale(1);
-}
+object-fit:contain;
 
 }
 
 
 
+/* ปุ่มเลื่อน */
 
-h1{
+#lightbox button{
 
-font-size:45px;
+position:absolute;
 
-margin:20px;
+top:50%;
 
-color:#00ff66;
+transform:translateY(-50%);
 
-}
+font-size:40px;
 
+width:60px;
 
+height:60px;
 
-.btn{
+border:none;
 
-display:inline-block;
-
-margin-top:20px;
-
-padding:15px 40px;
+border-radius:50%;
 
 background:#00ff66;
 
 color:#003d16;
 
-border-radius:30px;
-
-text-decoration:none;
+cursor:pointer;
 
 font-weight:bold;
 
-transition:.3s;
-
 }
 
 
 
-.btn:hover{
+#lightbox button:hover{
 
 background:white;
 
-transform:scale(1.1);
+}
+
+
+
+/* ปุ่มซ้าย */
+
+.prev{
+
+left:30px;
 
 }
 
 
 
-/* ส่วนเนื้อหา */
+/* ปุ่มขวา */
 
-section{
+.next{
 
-padding:80px 10%;
-
-}
-
-
-
-h2{
-
-text-align:center;
-
-color:#00ff66;
-
-margin-bottom:30px;
-
-}
-
-
-
-
-.box{
-
-background:#0d2b17;
-
-padding:30px;
-
-border-radius:20px;
-
-border:1px solid #00ff66;
-
-text-align:center;
+right:30px;
 
 }
 
 
 
 /* รูปผลงาน */
-
-.gallery{
-
-display:grid;
-
-grid-template-columns:
-repeat(auto-fit,minmax(250px,1fr));
-
-gap:20px;
-
-}
-
-
 
 .gallery img{
 
@@ -259,7 +118,7 @@ border:3px solid #0b6b32;
 
 cursor:pointer;
 
-transition:.3s;
+transition:0.3s;
 
 }
 
@@ -267,65 +126,8 @@ transition:.3s;
 
 .gallery img:hover{
 
-transform:scale(1.08);
+transform:scale(1.05);
 
 border-color:#00ff66;
-
-}
-
-
-
-/* เปิดรูปใหญ่ */
-
-#lightbox{
-
-display:none;
-
-position:fixed;
-
-top:0;
-
-left:0;
-
-width:100%;
-
-height:100%;
-
-background:rgba(0,0,0,.9);
-
-justify-content:center;
-
-align-items:center;
-
-z-index:100;
-
-}
-
-
-
-#lightbox img{
-
-max-width:90%;
-
-max-height:90%;
-
-border-radius:20px;
-
-border:5px solid #00ff66;
-
-}
-
-
-
-
-footer{
-
-background:#021006;
-
-padding:20px;
-
-text-align:center;
-
-color:#aaa;
 
 }
